@@ -20,17 +20,16 @@ const { authenticate } = require('../auth/authenticate');
 function generateToken(user){
   const payload = {
       subject: user.id,
-      username: user.username
+      username: user.username,
   };
   
   // This sets the expiration time for the token. I have 8 hours
   const options = {
       expiresIn: '8h'
-  }
+  };
   
   // This is the three parts of the JSON web token
    return jwt.sign(payload, secret.jwtSecret, options)
- 
 }
 
 
