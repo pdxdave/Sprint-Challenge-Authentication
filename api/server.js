@@ -10,6 +10,11 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
+// Test output
+server.get('/', (req, res) => {
+    res.send("This is my test page")
+})
+
 configureRoutes(server);
 
 module.exports = server;
