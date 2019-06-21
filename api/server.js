@@ -16,8 +16,10 @@ server.get('/', (req, res) => {
     res.send("This is my test page")
 })
 
+
 function logger(req, res, next){
     console.log(`${req.method} Request`)
+    next();
 }
 
 configureRoutes(server);
